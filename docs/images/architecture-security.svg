@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520" role="img" aria-label="Moltbot security boundaries and access controls">
+  <defs>
+    <linearGradient id="safe" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f1f7ff" />
+      <stop offset="1" stop-color="#f7fff2" />
+    </linearGradient>
+    <style>
+      .frame { fill: url(#safe); stroke: #2b2b2b; stroke-width: 2; }
+      .zone { fill: #ffffff; stroke: #2b2b2b; stroke-width: 2; }
+      .risk { fill: #fff1f1; stroke: #2b2b2b; stroke-width: 2; }
+      .gate { fill: #ffe9d6; stroke: #2b2b2b; stroke-width: 2; }
+      .text { font: 15px "SF Pro Text", -apple-system, Helvetica, Arial, sans-serif; fill: #1a1a1a; }
+      .title { font: 18px "SF Pro Display", -apple-system, Helvetica, Arial, sans-serif; font-weight: 600; fill: #1a1a1a; }
+      .label { font: 12px "SF Pro Text", -apple-system, Helvetica, Arial, sans-serif; fill: #3c3c3c; }
+      .arrow { stroke: #2b2b2b; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+      .dash { stroke-dasharray: 6 6; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#2b2b2b" />
+    </marker>
+  </defs>
+
+  <rect class="frame" x="30" y="30" width="1040" height="460" rx="18" />
+  <text class="title" x="70" y="70">Security boundaries: identity, scope, model</text>
+  <text class="label" x="70" y="92">Pairing + allowlists gate access before tools or models</text>
+
+  <rect class="risk" x="70" y="130" width="250" height="130" rx="14" />
+  <text class="text" x="195" y="165" text-anchor="middle">Inbound DMs</text>
+  <text class="label" x="195" y="188" text-anchor="middle">pairing · allowlist · open</text>
+
+  <rect class="risk" x="70" y="290" width="250" height="130" rx="14" />
+  <text class="text" x="195" y="325" text-anchor="middle">Group channels</text>
+  <text class="label" x="195" y="348" text-anchor="middle">mention gating · group policy</text>
+
+  <rect class="gate" x="360" y="190" width="320" height="140" rx="16" />
+  <text class="title" x="520" y="230" text-anchor="middle">Gateway controls</text>
+  <text class="label" x="520" y="255" text-anchor="middle">Auth token · device pairing</text>
+  <text class="label" x="520" y="276" text-anchor="middle">Allowlists · session scoping</text>
+  <text class="label" x="520" y="298" text-anchor="middle">Security audit + permissions</text>
+
+  <rect class="zone" x="740" y="130" width="300" height="130" rx="14" />
+  <text class="text" x="890" y="165" text-anchor="middle">Tools + nodes</text>
+  <text class="label" x="890" y="188" text-anchor="middle">system.run · browser · devices</text>
+
+  <rect class="zone" x="740" y="290" width="300" height="130" rx="14" />
+  <text class="text" x="890" y="325" text-anchor="middle">Models + plugins</text>
+  <text class="label" x="890" y="348" text-anchor="middle">provider tokens · in-process code</text>
+
+  <line class="arrow" x1="320" y1="195" x2="360" y2="240" />
+  <line class="arrow" x1="320" y1="355" x2="360" y2="280" />
+  <line class="arrow" x1="680" y1="260" x2="740" y2="200" />
+  <line class="arrow" x1="680" y1="260" x2="740" y2="350" />
+
+  <rect class="zone" x="360" y="350" width="320" height="90" rx="14" />
+  <text class="text" x="520" y="385" text-anchor="middle">Local trust zone</text>
+  <text class="label" x="520" y="408" text-anchor="middle">Loopback + tailnet auto-approve</text>
+  <line class="arrow dash" x1="520" y1="330" x2="520" y2="350" />
+</svg>
